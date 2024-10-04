@@ -1,6 +1,6 @@
 import ProjectSlider from "./../../components/projectSlider";
 import { useState } from "react";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, lazy, Suspense } from "react";
 import { ReactSVG } from 'react-svg';
 import { ReactComponent as QuoteRight } from "./../../assets/images/quote-right.svg";
 import { ReactComponent as QuoteLeft } from "./../../assets/images/quote-left.svg";
@@ -8,10 +8,10 @@ import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 
 import "./home.scss";
-import { ProjectImageData, MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge } from "./../../components/techStackData";
-
+import { ProjectImageData, MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge, TechStackComponent } from "./../../components/techStackData";
+import  LoadingCircle  from "./../../components/LoadingCircle.js";
+const LazyPersonalImage = lazy(() => import('./../../components/LazyPersonalImage'));
 import personal_image from "./../../assets/images/personal_image.png";
-
 
 function Home() {
   const navigate = useNavigate();
@@ -211,8 +211,14 @@ function Home() {
     });
   });
 
+  const techStackDataObj = {
+    "Software Engineering Tech Stack": SoftwareEngineeringTechStackData, 
+    "Data Science Tech Stack": DataScienceTechStackData, 
+    "Mathematics": MathematicsData, 
+    "Computer Science Knowledge": ComputerScienceKnowledge
+  };
   hiddenElements.forEach((el) => observer.observe(el));
-
+  
   return (
     <div className="home">
       <div className="home-intro hidden">
@@ -240,152 +246,28 @@ function Home() {
             <p>
               You can click any of the following skills to view the corresponding project.
             </p>
+            <p>
+              Also, you can click <a href="https://techplanet.notion.site/Tech-knowledge-hub-by-Kevin-Leung-a7de1567d5a246aab8805013a767ee8c?pvs=74">here</a> to view the my learning notes.
+            </p>
+            
           </div>
         </div>
-        <div className="hero-icon"><img src={personal_image}/></div>
         {/*
+        <div className="hero-icon">
+      <Suspense fallback={<LoadingCircle/>}>
+        <LazyPersonalImage />
+      </Suspense>
+    </div>
+  */}
+        
+        
         <div className="hero-icon">
           <img src={personal_image} />
 
         </div>
-  */}
+  
       </div>
-      <div className="tooling hidden">
-        <div className="tooling-title">
-          <h2>Software Engineering Tech Stack</h2>
-        </div>
-        <div className="tooling-box">
-          {SoftwareEngineeringTechStackData.map((item, index) => (
-            <div key={index} className="box-content">
-              <div className="box-icon">
-                <item.imgComponent className="icon" />
-              </div>
-              <div className="box-text">
-                {Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="tooling hidden">
-        <div className="tooling-title">
-          <h2>Data Science Tech Stack</h2>
-        </div>
-        <div className="tooling-box">
-          {DataScienceTechStackData.map((item, index) => (
-            item.url ? (
-              <a href={item.url} className="box-content box-content-link">
-            <div key={index} className="box-content">
-              <div className="box-icon">
-                <item.imgComponent className="icon" />
-              </div>
-              <div className="box-text">
-                {Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )}
-              </div>
-            </div>
-            </a>
-            ) : 
-            (
-              <div key={index} className="box-content">
-              <div className="box-icon">
-                <item.imgComponent className="icon" />
-              </div>
-              <div className="box-text">
-                {Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )}
-              </div>
-            </div>
-            )
-          ))}
-        </div>
-      </div>
-      <div className="tooling hidden">
-        <div className="tooling-title">
-          <h2>Mathematics</h2>
-        </div>
-        <div className="tooling-box">
-          {MathematicsData.map((item, index) => (
-            item.url ? (
-            <a href={item.url} className="box-content box-content-maths box-content-link">
-              <div key={index}>
-              <div className="box-text">
-                {
-                 Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )
-                }
-                
-              </div>
-              </div>
-              </a>)
-              :
-              (<div key={index} className="box-content box-content-maths">
-              <div className="box-text">
-                {
-                 Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )
-                }
-                
-              </div>
-              </div>)
-              
-          ))}
-        </div>
-      </div>
-      <div className="tooling hidden">
-        <div className="tooling-title">
-          <h2>Computer Science Knowledge</h2>
-        </div>
-        <div className="tooling-box">
-          {ComputerScienceKnowledge.map((item, index) => (
-            item.url ? (
-            <a href={item.url} className="box-content box-content-maths box-content-link">
-              <div key={index}>
-              <div className="box-text">
-                {
-                 Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )
-                }
-                
-              </div>
-              </div>
-              </a>)
-              :
-              (<div key={index} className="box-content box-content-maths">
-              <div className="box-text">
-                {
-                 Array.isArray(item.text) ? (
-                  item.text.map((text, i) => <p key={i}>{text}</p>)
-                ) : (
-                  <p>{item.text}</p>
-                )
-                }
-                
-              </div>
-              </div>)
-              
-          ))}
-        </div>
-      </div>
+      <TechStackComponent techStackDataObj={techStackDataObj}/>
       
       
       <div className="showroom-section hidden">
@@ -409,6 +291,7 @@ function Home() {
               </h4>
           <h4 className="education-details"><p>{"Triple Majors in Data Science, Computer Science and Mathematics(Applied)"}</p></h4>
               <h4 className="education-details"><p>First Class Honors(Dean's List)</p></h4>
+              <h4 className="education-details"><p>{"Cumulative GPA (3.87/4.3), Top 2%"}</p></h4>
         </div>
         <div className="featured-box">
           <div className="article">
@@ -452,7 +335,7 @@ function Home() {
           <QuoteLeft className="left" />
           <div className="quote-body-content">
             <p>
-            If you really look closely, most overnight successes took a long time.<span>!</span>
+            Don't aim for success if you want it; just do what you love and believe in, and it will come naturally.<span>!</span>
             </p>
           </div>
           <QuoteRight className="right" />

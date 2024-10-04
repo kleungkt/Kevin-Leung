@@ -72,6 +72,7 @@ export default function LinearWithValueLabel() {
             version="1.1"
             viewBox="0 0 857 151"
             id="lo"
+            className="svg"
           >
             <g id="roar">
               <path

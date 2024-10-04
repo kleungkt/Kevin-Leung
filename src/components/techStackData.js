@@ -2,6 +2,7 @@ import { ReactComponent as AccessImg } from "./../assets/images/access.svg";
 import { ReactComponent as AwsImg } from "./../assets/images/aws.svg";
 import { ReactComponent as CppImg } from "./../assets/images/cpp.svg";
 import { ReactComponent as CImg } from "./../assets/images/c.svg";
+import { ReactComponent as CsharpImg } from "./../assets/images/csharp.svg";
 import { ReactComponent as PythonImg } from "./../assets/images/python.svg";
 import { ReactComponent as JavaImg } from "./../assets/images/java.svg";
 import { ReactComponent as GoImg } from "./../assets/images/go.svg";
@@ -30,7 +31,7 @@ import { ReactComponent as PytorchImg } from "./../assets/images/pytorch.svg";
 import { ReactComponent as RImg } from "./../assets/images/r-lang.svg";
 import { ReactComponent as SklearnImg } from "./../assets/images/sklearn.svg";
 import { ReactComponent as SparkImg } from "./../assets/images/spark.svg";
-
+import { ReactComponent as RustImg } from "./../assets/images/rust.svg";
 import { ReactComponent as NodeImg } from "./../assets/images/node.svg";
 import { ReactComponent as MongoImg } from "./../assets/images/mongo.svg";
 import { ReactComponent as JavascriptImg } from "./../assets/images/javascript.svg";
@@ -49,6 +50,10 @@ const ProjectImageData = [
     {
         id: 2,
         img: "https://ik.imagekit.io/kleugnkt/KChat%20Design%20Pattern.png?updatedAt=1709023849966"
+    },
+    {
+        id: 3,
+        img: "https://ik.imagekit.io/kleugnkt/CovidWorldMap.png?updatedAt=1709653429175"
     }
   ]
   const MathematicsData = [
@@ -67,6 +72,7 @@ const ProjectImageData = [
     { url: "https://github.com/kleungkt/Statistical-Inference", text: ["Statistical", "Inference"] },
     { url: "https://github.com/kleungkt/Stochastic-Processing", text: ["Stochastic", "Process"] },
     { url: "https://github.com/kleungkt/Time-Series", text: ["Time", "Series"] },
+    { url: "https://github.com/kleungkt/Quantitative-Methods-for-Fixed-Income-Derivatives", text: ["Fixed", "Income", "Derivatives"]},
   ];
 
    
@@ -108,6 +114,7 @@ const ProjectImageData = [
       text: "Matlab",
     },
     {
+      url: "",
       imgComponent: AccessImg,
       text: ["Microsoft", "Access"],
     },
@@ -154,7 +161,7 @@ const ProjectImageData = [
     {
       url: "https://github.com/kleungkt/Machine-Learning",
       imgComponent: SklearnImg,
-      text: "Scikit-learn",
+      text: ["Scikit", "learn"],
     },
     {
       url: "https://kevinleung.tech/work#crypto-trading-company",
@@ -179,20 +186,27 @@ const ProjectImageData = [
       text: ["C++", "(11/14/17/20)"],
     },
     {
+      url: "https://techplanet.notion.site/C-Tutorial-Chinese-3dfbe6bbcbbc4414ba711d360cf07441?pvs=4",
+      imgComponent: CsharpImg,
+      text: "C#"
+    },
+    {
       url: "https://kevinleung.tech/work#crypto-trading-company",
       imgComponent: DockerImg,
       text: "Docker",
     },
     {
+      url: "https://kevinleung.tech/work#crypto-trading-company",
       imgComponent: ElasticSearchImg,
       text: ["Elastic", "Search"],
     },
     {
+      url: "https://kevinleung.tech/work#chatdaddy",
       imgComponent: ExpressJSImg,
       text: "ExpressJS",
     },
     {
-      url: "https://github.com/kleungkt/software-engineering-covid-project",
+      url: "https://github.com/kleungkt/Software-engineering-covid-project",
       imgComponent: GitImg,
       text: "Git",
     },
@@ -212,7 +226,7 @@ const ProjectImageData = [
       text: "JQuery",
     },
     {
-      url: "https://github.com/kleungkt/software-engineering-covid-project",
+      url: "https://github.com/kleungkt/Software-engineering-covid-project",
       imgComponent: JavaImg,
       text: "Java",
     },
@@ -237,6 +251,11 @@ const ProjectImageData = [
       url: "https://github.com/kleungkt/chatdaddy-front",
       imgComponent: ReactImg,
       text: "React",
+    },
+    {
+      url: "https://techplanet.notion.site/Rust-8ab34e98837247f69d29b19d795a4e46?pvs=74",
+      imgComponent: RustImg,
+      text: "Rust",
     },
     {
       url: "https://kevinleung.tech/work#goldman-sachs",
@@ -265,7 +284,7 @@ const ComputerScienceKnowledge = [
     },
     {
         url: "https://github.com/kleungkt/data-structure-algorithm",
-        text: ["Data Structures", "& Algorithms"]
+        text: ["Data", "Structures", "& Algorithms"]
     },
     {
       url: "https://techplanet.notion.site/Distributed-Systems-4542c6a3023741eb9c334aebf41446d5",
@@ -311,13 +330,66 @@ function getTextForSorting(item) {
      return item.text;
   }
  }
- const techStackDataList = [MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge]; 
-   // Sort the array based on the text attribute
-   techStackDataList.map((techStackData, index) => (
-    techStackData.sort((a, b) => {
-      const textA = getTextForSorting(a);
-      const textB = getTextForSorting(b);
-      return textA.localeCompare(textB);
-     })
-   ));
-  export {ProjectImageData, MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge};
+const techStackDataList = [MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge]; 
+// Sort the array based on the text attribute
+techStackDataList.map((techStackData, index) => (
+techStackData.sort((a, b) => {
+  const textA = getTextForSorting(a);
+  const textB = getTextForSorting(b);
+  return textA.localeCompare(textB);
+  })
+));
+const TechStackComponent = ({ techStackDataObj }) => {
+  return (
+     <div>
+       {Object.entries(techStackDataObj).map(([title, dataList]) => (
+         <div key={title} className="tooling hidden">
+           <div className="tooling-title">
+             <h2>{title}</h2>
+           </div>
+           <div className="tooling-box">
+             {dataList.map((item, index) => (
+              item.url ? (
+                  <a href={item.url} className={`box-content box-content-link ${item.imgComponent ? '': 'box-content-maths'}`}>
+                     <div className="box-content">
+                       {item.imgComponent && (
+                         <div className="box-icon">
+                           <item.imgComponent className="icon" />
+                         </div>
+                       )}
+                       <div className="box-text">
+                         {Array.isArray(item.text) ? (
+                           item.text.map((text, i) => <p key={i}>{text}</p>)
+                         ) : (
+                           <p>{item.text}</p>
+                         )}
+                       </div>
+                     </div>
+                  </a>
+                 ) : (
+                  <a href="" className={`box-content box-content-link ${item.imgComponent ? '': 'box-content-maths'}`}>
+                    <div className="box-content">
+                      {item.imgComponent && (
+                        <div className="box-icon">
+                          <item.imgComponent className="icon" />
+                        </div>
+                      )}
+                      <div className="box-text">
+                        {Array.isArray(item.text) ? (
+                          item.text.map((text, i) => <p key={i}>{text}</p>)
+                        ) : (
+                          <p>{item.text}</p>
+                        )}
+                      </div>
+                    </div>
+                  </a>
+                 )
+             ))}
+           </div>
+         </div>
+       ))}
+     </div>
+  );
+ };
+
+  export {ProjectImageData, MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge, TechStackComponent};

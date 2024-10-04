@@ -3,7 +3,7 @@ const Home = React.lazy(
     () => import('./../pages/Home/home'),
 )
 const About = React.lazy(
-    () => import('./../pages/About/about'),
+    () => import('./../pages/About/about-me'),
 )
 const Blog = React.lazy(
     () => import('./../pages/Blog/blog'),

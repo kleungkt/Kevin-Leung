@@ -9,9 +9,15 @@
     .load {
         width: 70%;
         animation: fadeInUp 1s ease forwards, fadeOutUp 1s ease forwards 4s;
+        .svg {
+            @media (max-width: 759px) {
+                width: 200%;
+            }
+        }
         #lo {
-            // animation: fill 0.5s ease forwards 3.5s;
+             animation: fill 0.5s ease forwards 3.5s;
             #roar {
+                
                 #roar-one {
                     stroke-dasharray: 785;
                     stroke-dashoffset: 785;
@@ -51,6 +57,9 @@
                     stroke-dasharray: 785;
                     stroke-dashoffset: 785;
                     animation: line-anim 1.5s ease forwards 1.2s, fill 0.5s ease forwards 3.5s;
+                }
+                @media (max-width: 479px){
+                    stroke-width: 0.5px;
                 }
             }
         }

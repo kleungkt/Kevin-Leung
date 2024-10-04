@@ -20,5 +20,13 @@ export const ProjectData = [
     img: "https://ik.imagekit.io/kleugnkt/KChat%20Design%20Pattern.png?updatedAt=1709023849966",
     stack: [["C++", "MFC", "Reactor", "STL", "Epoll"],["Socket", "Multithreading", "MySQL", "High-performance Logging"]],
     link: "https://github.com/kleungkt/Kchat"
+  },
+  {
+    title: "Covid World Map",
+    description: "A data analysis & visualization GUI for covid world statistics in Java/JUnit/Jacoco, following the full Software Development Lifecycle(SDLC)",
+    img: "https://ik.imagekit.io/kleugnkt/CovidWorldMap.png?updatedAt=1709653429175",
+    stack: [["Java", "JUnit", "Jacoco"], ["SDLC", "Unit Test", "Integration Test", "Gradle", "JavaFX"]],
+    link: "https://github.com/kleungkt/Software-engineering-covid-project",
+    transform: {transform: "scaleX(0.6)"},
   }
 ];

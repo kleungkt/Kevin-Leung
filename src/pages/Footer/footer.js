@@ -34,7 +34,7 @@ function Footer() {
 </svg>
             </a>
             </div>
-            <a className="social-mail" href="mailto:leungkt.kevin@gmail.com" target="_blank">
+            <a className="social-mail" href="mailto:kevin.leung.tech@gmail.com" target="_blank">
                <div className="box">
                 <p>Shoot Me A Mail</p>
                 <MailImg className="mail" />

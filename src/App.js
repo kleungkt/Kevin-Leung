@@ -9,7 +9,9 @@ function App() {
 
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {setLoading(false);}, 5000);
+        setTimeout(() => {
+            setLoading(false);
+        }, 5000);
       }, []);
   return (
       <>

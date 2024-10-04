@@ -42,7 +42,7 @@ const ProjectSlider = ({ setBackground }) => {
             {index === current && (
               <>
                 <img 
-                style={slide.transform ? slide.transform : null} src={slide.img} alt="project image" className="image" />
+                style={slide.transform ? slide.transform : null} src={slide.img} alt="project image" className="image" loading="lazy"/>
                 <div className="detail">
                   <h4>{slide.title}</h4>
                   <p className="desc">{slide.description}</p>

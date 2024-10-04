@@ -1,0 +1,54 @@
+.about-page {
+.about-me {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #050810;
+  font-family: Arial, sans-serif;
+  display: flex;
+ }
+ 
+ .content {
+  max-width: 80%;
+
+  background-color: #050810;
+  box-shadow: 0 4px 6px rgba(88, 36, 36, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+ 
+ .about-me h1 {
+  align-items: center;
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'ExoSpace';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+ }
+ 
+ .about-me p {
+  font-size: 30px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;
+  font-family: 'ExoSpace';
+  text-align: left;
+ }
+ 
+ .about-me p:last-child {
+  margin-bottom: 0;
+ }
+ .about-page{
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0;
+  overflow: hidden !important;
+  display: flex;
+ }
+}
