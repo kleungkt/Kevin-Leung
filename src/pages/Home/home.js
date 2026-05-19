@@ -1,6 +1,5 @@
 import ProjectSlider from "./../../components/projectSlider";
-import { useState } from "react";
-import React, { useEffect, useRef, lazy, Suspense } from "react";
+import React, { useEffect, useRef, lazy, Suspense, useState } from "react";
 import { ReactSVG } from 'react-svg';
 import { ReactComponent as QuoteRight } from "./../../assets/images/quote-right.svg";
 import { ReactComponent as QuoteLeft } from "./../../assets/images/quote-left.svg";
@@ -10,8 +9,9 @@ import { useNavigate } from "react-router-dom";
 import "./home.scss";
 import { ProjectImageData, MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge, TechStackComponent } from "./../../components/techStackData";
 import  LoadingCircle  from "./../../components/LoadingCircle.js";
-const LazyPersonalImage = lazy(() => import('./../../components/LazyPersonalImage'));
 import personal_image from "./../../assets/images/personal_image.png";
+
+const LazyPersonalImage = lazy(() => import('./../../components/LazyPersonalImage'));
 
 function Home() {
   const navigate = useNavigate();
