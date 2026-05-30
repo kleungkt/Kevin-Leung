@@ -171,6 +171,30 @@ const ProjectImageData = [
   ];
   const SoftwareEngineeringTechStackData = [
     {
+      url: "https://kevinleung.tech",
+      text: "LLMs",
+    },
+    {
+      url: "https://kevinleung.tech",
+      text: "LangChain",
+    },
+    {
+      url: "https://kevinleung.tech",
+      text: "RAG",
+    },
+    {
+      url: "https://kevinleung.tech",
+      text: "Transformers",
+    },
+    {
+      url: "https://kevinleung.tech",
+      text: "CUDA",
+    },
+    {
+      url: "https://kevinleung.tech",
+      text: ["OpenAI", "API"],
+    },
+    {
       url: "https://kevinleung.tech/work#crypto-trading-company",
       imgComponent: AwsImg,
       text: "AWS",

@@ -1,17 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Suspense} from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import indexRoutes from './routes/index'
 import Preloader from './components/preloader';
 
+const MainLayout = React.lazy(() => import('./layout/main'));
+
 function App() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, 5000);
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 500);
+        return () => clearTimeout(timer);
       }, []);
   return (
       <>
@@ -21,15 +22,14 @@ function App() {
         (
             <Router>
             <Routes>
-                {indexRoutes.map((prop, key) => {
-                    return (
-                        <Route
-                            path={prop.path}
-                            key={key}
-                            element={prop.component}
-                        ></Route>
-                    )
-                })}
+                <Route
+                    path="/*"
+                    element={
+                        <Suspense fallback={<Preloader />}>
+                            <MainLayout />
+                        </Suspense>
+                    }
+                />
             </Routes>
         </Router>
         ) 

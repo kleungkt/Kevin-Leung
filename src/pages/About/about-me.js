@@ -6,13 +6,12 @@ function About() {
         <div className="about-me">
         <div className="content">
           <h1>About Me</h1>
-          <p>Hi, I am a software engineer with triple majors in Data Science, Computer Science, and Applied Mathematics at HKUST.</p>
-          <p>With strong quantitative skills, I have a genuine interest in the software engineering, data science, and quantitative finance fields.</p>
-          <p>I have cultivated my interest in these areas with experience in internships, projects, and research works.</p>
-          <p>I am passionate about the intersection of technology and finance, I strive to create efficient and robust systems. I enjoy tackling challenging projects and continuously expanding my knowledge in this dynamic industry.</p>
-          <p>Also, with a passion for innovation and entrepreneurship, I founded Hong Kong's first auto-saving app and was supported by Cyberport Hong Kong.</p>
-          <p>I have received more than 11 scholarships and awards that cover the full tuition fee at university and I would love to dedicate myself to contributing to society using my professional knowledge.</p>
-          <p>My personal interests are debating, coding, and traveling. I am the Captain of the Cantonese Debating Team at HKUST.</p>
+          <p>I am an AI Engineer and Data Engineer with triple majors in Data Science, Computer Science, and Applied Mathematics from HKUST.</p>
+          <p>I specialize in building intelligent systems powered by large language models (LLMs), retrieval-augmented generation (RAG) pipelines, and AI-driven automation. My work spans the full stack of AI engineering — from model selection and fine-tuning to production deployment and monitoring.</p>
+          <p>With deep expertise in machine learning, natural language processing, and software engineering, I design and ship AI systems that solve real-world problems at scale. I am passionate about the intersection of AI and engineering, building robust pipelines and intelligent agents that deliver measurable impact.</p>
+          <p>As a founder, I built Hong Kong's first auto-saving app and received backing from Cyberport Hong Kong, combining entrepreneurial drive with technical execution.</p>
+          <p>I have been recognized with more than 11 scholarships and awards covering full tuition, and I am committed to advancing the field of AI engineering and contributing to the broader tech community.</p>
+          <p>Outside of engineering, I am an avid debater and served as Captain of the Cantonese Debating Team at HKUST.</p>
         </div>
       </div>
     </div>

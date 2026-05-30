@@ -230,18 +230,18 @@ function Home() {
           </div>
           <div className="content-primary">
             <h1>
-              a <span>Quant Developer</span> and <span>Data Engineer</span>.
+              an <span>AI Engineer</span> and <span>Data Engineer</span>.
             </h1>
           </div>
           <div className="content-secondary">
             <p>
-              I develop <span>Trading Strategies</span>,{" "}
-              <span>Trading Systems</span> and <span>Data Pipeline</span>.
+              I develop <span>AI systems</span>,{" "}
+              <span>intelligent agents</span> and <span>data pipelines</span>.
             </p>
             <p>
               I have extensive background in <span>Software Engineering</span>,{" "}
-              <span>Data Science</span>, <span>Mathematics</span>, and{" "}
-              <span>Finance</span>.
+              <span>Machine Learning</span>, <span>Data Science</span>, and{" "}
+              <span>Mathematics</span>.
             </p>
             <p>
               You can click any of the following skills to view the corresponding project.

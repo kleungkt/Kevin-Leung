@@ -42,7 +42,7 @@ function Footer() {
             </a>
             </div>
             <div className="footer">
-            <p>Built on top of Onyedika.xyz. Credit to https://github.com/kasodon. All rights reserved</p>
+            <p>&copy; 2024 Kevin Leung. All Rights Reserved.</p>
         </div>
         </footer>
     )
