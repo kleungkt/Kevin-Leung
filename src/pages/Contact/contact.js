@@ -1,20 +1,32 @@
+import './contact.scss';
+
 function Contact() {
     return (
-        <div className="contact" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', padding: '2rem' }}>
-            <h1>Get In Touch</h1>
-            <p style={{ marginTop: '1rem', fontSize: '1.1rem', color: '#aaa', textAlign: 'center', maxWidth: '600px' }}>
-                I'm always open to discussing AI engineering, data infrastructure, or potential collaborations.
-            </p>
-            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-                <a href="mailto:kevin.leung.tech@gmail.com" style={{ color: '#66add3', fontSize: '1.1rem', textDecoration: 'none' }}>
-                    📧 kevin.leung.tech@gmail.com
-                </a>
-                <a href="https://www.linkedin.com/in/kleungkt/" target="_blank" rel="noreferrer" style={{ color: '#66add3', fontSize: '1.1rem', textDecoration: 'none' }}>
-                    💼 LinkedIn
-                </a>
-                <a href="https://github.com/kleungkt" target="_blank" rel="noreferrer" style={{ color: '#66add3', fontSize: '1.1rem', textDecoration: 'none' }}>
-                    🐙 GitHub
-                </a>
+        <div className="contact">
+            <div className="contact-content">
+                <h1>Get In Touch</h1>
+                <p className="contact-tagline">Interested in working together? Let's connect.</p>
+                <p className="contact-description">
+                    I'm always open to discussing AI engineering, data infrastructure, 
+                    consulting engagements, or potential collaborations.
+                </p>
+                <div className="contact-links">
+                    <a href="mailto:kevin.leung.tech@gmail.com" className="contact-link">
+                        <span className="contact-icon">📧</span>
+                        <span>kevin.leung.tech@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kleungkt/" target="_blank" rel="noreferrer" className="contact-link">
+                        <span className="contact-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/kleungkt" target="_blank" rel="noreferrer" className="contact-link">
+                        <span className="contact-icon">🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <div className="contact-note">
+                    <p>Available for AI consulting, engineering roles, and speaking engagements.</p>
+                </div>
             </div>
         </div>
     )

@@ -20,7 +20,7 @@ function Work() {
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3MCx8nGrdesb8YkHnpHcOngEy4lI_g86KgoHQuimzn5IC1ww19NLJ4xE9WaJeg2gTJr4&usqp=CAU" alt="" />
                 </div>
                 <div className="single-detail" id="crypto-trading-company">
-                    <h4>Crypto Trading Company | Software Engineer</h4>
+                    <h4>Crypto Trading Firm | AI & Systems Engineer</h4>
                     {/*
                     <p>➤ Designed and implemented algorithmic trading strategies (Statarb, CTA) by C++ & Python, resulting in  35% increase in average monthly returns. <br/>
                     ➤ Developed a high-performance, low-latency trading system using C++17, achieving round-trip latency ~50ms, capable of 20k+ orders/sec<br/>
@@ -55,7 +55,7 @@ function Work() {
                     <img src="https://ik.imagekit.io/kleugnkt/vico.jpg?updatedAt=1709110312609" alt="" />
                 </div>
                 <div className="single-detail">
-                    <h4>Vico Capital Limited | Software Engineer</h4>
+                    <h4>Vico Capital | Quantitative Systems Engineer</h4>
                     {/*
                     <p>Contributed to the development of a high concurrency and efficiency trading system on cryptocurrency markets using C++ & Python</p>
 <p>Constructed quantitative models to arbitrage in multiple currencies and recognize market patterns using time series analysis</p>
@@ -71,7 +71,7 @@ function Work() {
                     <img src="https://ik.imagekit.io/kleugnkt/Screenshot%202024-02-28%20at%204.52.30%20PM.png?updatedAt=1709110374157" alt="" />
                 </div>
                 <div className="single-detail">
-                    <h4>Chatdaddy | Full stack Software Engineer</h4>
+                    <h4>ChatDaddy | Full Stack Engineer</h4>
                     {/*<p></p>*/}
                     <div class="button-wrap">
                      <a href="https://www.chatdaddy.tech/"><button class="button">Visit &rarr;</button></a>
@@ -83,7 +83,7 @@ function Work() {
                     <img src="https://ik.imagekit.io/kleugnkt/Screenshot%202024-02-28%20at%204.06.13%20PM.png?updatedAt=1709110484182" alt="" />
                 </div>
                 <div className="single-detail">
-                    <h4>Matrix Element Blockchain | Blockchain Engineer</h4>
+                    <h4>Matrix Element | Systems Engineer</h4>
                     {/*<p></p>*/}
                     <div class="button-wrap">
                      <a href="https://www.matrixelements.com/home"><button class="button">Visit &rarr;</button></a>

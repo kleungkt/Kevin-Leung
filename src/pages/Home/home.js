@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 
 import "./home.scss";
-import { ProjectImageData, MathematicsData, DataScienceTechStackData, SoftwareEngineeringTechStackData, ComputerScienceKnowledge, TechStackComponent } from "./../../components/techStackData";
+import { ProjectImageData, DataScienceTechStackData, SoftwareEngineeringTechStackData, TechStackComponent } from "./../../components/techStackData";
 import  LoadingCircle  from "./../../components/LoadingCircle.js";
 import personal_image from "./../../assets/images/personal_image.png";
 
@@ -19,13 +19,6 @@ function Home() {
   const i = gsap.utils.selector(Illus);
   const tlm = useRef();
   const dlm = useRef();
-
-  // useEffect(() => {
-  //     dlm.current = gsap.timeline()
-  //     .fromTo(i(".c-tween"), {scale: 0.7}, {
-  //         scale: 1, repeat: -1, yoyo: true,
-  //       })
-  // });
 
   useEffect(() => {
     tlm.current = gsap
@@ -212,10 +205,8 @@ function Home() {
   });
 
   const techStackDataObj = {
-    "Software Engineering Tech Stack": SoftwareEngineeringTechStackData, 
-    "Data Science Tech Stack": DataScienceTechStackData, 
-    "Mathematics": MathematicsData, 
-    "Computer Science Knowledge": ComputerScienceKnowledge
+    "AI & Engineering": SoftwareEngineeringTechStackData, 
+    "ML & Data": DataScienceTechStackData
   };
   hiddenElements.forEach((el) => observer.observe(el));
   
@@ -230,46 +221,55 @@ function Home() {
           </div>
           <div className="content-primary">
             <h1>
-              an <span>AI Engineer</span> and <span>Data Engineer</span>.
+              an <span>AI Engineer</span> and <span>AI Consultant</span>.
             </h1>
           </div>
           <div className="content-secondary">
             <p>
-              I develop <span>AI systems</span>,{" "}
-              <span>intelligent agents</span> and <span>data pipelines</span>.
+              I build <span>production AI systems</span> —{" "}
+              <span>intelligent agents</span>, <span>RAG pipelines</span>,{" "}
+              <span>LLM-powered automation</span>, and <span>data infrastructure</span>.
             </p>
             <p>
-              I have extensive background in <span>Software Engineering</span>,{" "}
-              <span>Machine Learning</span>, <span>Data Science</span>, and{" "}
-              <span>Mathematics</span>.
+              I help companies adopt <span>AI engineering</span>,{" "}
+              from architecture design to production deployment.
             </p>
             <p>
-              You can click any of the following skills to view the corresponding project.
+              Previously at <span>Goldman Sachs</span>, now focused on building{" "}
+              <span>intelligent systems that ship</span>.
             </p>
-            <p>
-              Also, you can click <a href="https://techplanet.notion.site/Tech-knowledge-hub-by-Kevin-Leung-a7de1567d5a246aab8805013a767ee8c?pvs=74">here</a> to view the my learning notes.
-            </p>
-            
           </div>
         </div>
-        {/*
-        <div className="hero-icon">
-      <Suspense fallback={<LoadingCircle/>}>
-        <LazyPersonalImage />
-      </Suspense>
-    </div>
-  */}
-        
-        
         <div className="hero-icon">
           <img src={personal_image} />
-
         </div>
-  
       </div>
       <TechStackComponent techStackDataObj={techStackDataObj}/>
-      
-      
+
+      <div className="services-section hidden">
+        <div className="services-title">
+          <h2>What I Do</h2>
+        </div>
+        <div className="services-grid">
+          <div className="service-card">
+            <h3>AI Engineering</h3>
+            <p>Production LLM systems, RAG pipelines, intelligent agents, and AI automation</p>
+          </div>
+          <div className="service-card">
+            <h3>Data Infrastructure</h3>
+            <p>Scalable data pipelines, ETL systems, and real-time analytics platforms</p>
+          </div>
+          <div className="service-card">
+            <h3>AI Consulting</h3>
+            <p>Helping companies adopt AI — from strategy and architecture to deployment and monitoring</p>
+          </div>
+          <div className="service-card">
+            <h3>Systems Engineering</h3>
+            <p>High-performance, low-latency systems built for production workloads</p>
+          </div>
+        </div>
+      </div>
+
       <div className="showroom-section hidden">
         <div className="showroom-title">
           <h2>Showroom</h2>

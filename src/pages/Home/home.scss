@@ -452,6 +452,86 @@
       -webkit-filter: blur(8px);
     }
   }
+  .services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+    &.hidden {
+      opacity: 0;
+    }
+    &.show {
+      opacity: 1;
+      .services-title {
+        animation: flipInY 1s ease forwards;
+        backface-visibility: visible !important;
+      }
+      .services-grid {
+        animation: jackInTheBox 1s ease forwards;
+      }
+    }
+    .services-title {
+      background: #12141d;
+      border-radius: 12px;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 4rem;
+      box-shadow: 0px 0px 4px 1px rgba(20, 233, 86, 1) inset;
+      -webkit-box-shadow: 0px 0px 4px 1px rgba(20, 233, 86, 1) inset;
+      -moz-box-shadow: 0px 0px 4px 1px rgba(20, 233, 86, 1) inset;
+      transform: rotate(0.01turn);
+      h2 {
+        text-transform: uppercase;
+        font-family: "Cyborg";
+        font-weight: 900;
+        color: #14e956;
+        text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+          -1px 1px 0 #000, 1px 1px 0 #000;
+        @supports (-webkit-text-stroke: 0.1px #000) {
+          -webkit-text-stroke: 0.1px #000;
+          -webkit-text-fill-color: #14e956;
+        }
+      }
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      width: 80%;
+      max-width: 900px;
+      @media (max-width: 759px) {
+        grid-template-columns: 1fr;
+        width: 90%;
+      }
+      .service-card {
+        background: #12141d;
+        border-radius: 12px;
+        padding: 2rem;
+        border: 1px solid rgba(20, 233, 86, 0.2);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        &:hover {
+          border-color: #14e956;
+          transform: translateY(-4px);
+        }
+        h3 {
+          font-family: "Cyborg";
+          font-weight: 900;
+          color: #14e956;
+          font-size: 1.3rem;
+          margin-bottom: 0.8rem;
+          text-transform: uppercase;
+        }
+        p {
+          color: #aaa;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+    }
+  }
 }
 
 .showroom-section {
